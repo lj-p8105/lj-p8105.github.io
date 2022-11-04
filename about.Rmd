@@ -1,0 +1,11 @@
+---
+title: "About me"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## Brief Intro
+
+I am a M.S. student studying biostatistics at Mailman. My interest is mainly in statistical decision theory, optimization, and game theory with applications in health policy, economics, and population health. I formerly studied mathematics and biology at UT Austin.
