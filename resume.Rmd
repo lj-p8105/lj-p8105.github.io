@@ -1,0 +1,59 @@
+---
+title: "Lincole's resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+
+### *Education*
+
+#### Mailman School of Public Health at Columbia University
+M.S. in Biostatistics, May 2024  
+
+#### The University of Texas at Austin
+Bachelor of Science, Mathematics, GPA: 3.89  
+Bachelor of Science, Computational Biology,  GPA: 3.7   
+Minor, Government
+
+
+### *Skills*
+
+#### Programming 
+R; Matlab, Python; Java, Excel
+
+#### Languages
+Mandarin, Cantonese, Chinese
+
+
+### *Research Projects*
+
+#### Kalman Filters in Epidemiological Studies
+* Researched on the Markov Chain and the Classical and Ensemble Kalman Filters with a focus on their applications in epidemiological settings  
+* Analyzed effectiveness of Susceptible-Infectious-Recovered (SIR) model in predicting the spread of COVID-19 during the initial outbreak in Wuhan  
+* Proposed expository paper [paper link](https://web.ma.utexas.edu/users/drp/files/Fall2020Projects/Lincole_DRP_Fall_2020%20-%20Lingke%20Jiang.pdf)  
+
+#### Finite Spaces Tweaks and Twerks  
+* Studied distinct topological properties in finite spaces [e.g., partial order, homeomorphisms, connectivity and path connectivity]  
+* Proposed a self-contained write-up that accounted for some such properties [paper link](https://web.ma.utexas.edu/users/drp/files/Spring2020Projects/Lincole_DRP%20-%20Lingke%20Jiang.pdf)  
+
+
+### *Publication*
+* Jiang, Xianhan, et al. "Metastatic prostate cancer‐associated P62 inhibits autophagy flux and promotes epithelial to mesenchymal transition by sustaining the level of HDAC6." The Prostate 78.6 (2018): 426-434.  
+
+
+### *Fellowship*
+#### Stand Together Fellowship
+* Data Engineer Intern at Mercatus Institute in George Mason University  
+* Responsible in assisting the data development of trackable analytics and visualizations
+
+### *Comunity Work*
+#### Excelsior Healthier
+* Volunteer as Team Leader for Data Management at COVID Testing Site  
+* Organized and analyzed data using excel to synthesize information [zip code, test results, etc.] to submit to state/city government on a biweekly basis  
+* Trained 3-4 new employees/volunteers with patient communication and data analysis techniques  
+* Helped directing patients, answering phone calls, reporting test results, booking appointments, etc. in Cantonese, English, and Mandarin  
+
+#### Central Texas Food Bank
+* Volunteered in the warehouse by filtering, selecting, and packing to assemble food packages for needed families in Austin; in Mobile Food Pantry by distributing food packages in weekly basis.  
