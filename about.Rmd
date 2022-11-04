@@ -6,6 +6,10 @@ output:
     toc_float: true
 ---
 
-## Brief Intro
+### *Currently*
 
-I am a M.S. student studying biostatistics at Mailman. My interest is mainly in statistical decision theory, optimization, and game theory with applications in health policy, economics, and population health. I formerly studied mathematics and biology at UT Austin.
+I am a M.S. student studying biostatistics at Mailman. My interest is mainly in statistical decision theory and optimization with applications in health policy, economics, and population health. I formerly studied mathematics, biology, and political science at UT Austin.
+
+### *Autobiography*
+
+I was born and raised in Guangzhou, China.
