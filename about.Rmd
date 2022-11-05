@@ -8,8 +8,12 @@ output:
 
 ### *Currently*
 
-I am a M.S. student studying biostatistics at Mailman. My interest is mainly in statistical decision theory and optimization with applications in health policy, economics, and population health. I formerly studied mathematics, biology, and political science at UT Austin.
+I am a M.S. student studying biostatistics at Mailman. My interest is mainly in statistical decision theory and optimization with applications in health policy, economics, and population health.
 
 ### *Autobiography*
 
-I was born and raised in Guangzhou, China.
+I was born and raised in Guangzhou in China and I came to the U.S. for college. I studied mathematics, biology, and political science at UT Austin. Having grown up in a family of healthcare professionals, I have always wanted to build my own career in aim of improving population health.
+
+### *Hobbies*
+
+I love reading, old movies, exercising. I used to play an instrument but am now very rusty at it. I'd love to be better at bridge or poker if I could.

@@ -3,7 +3,7 @@ output_dir: "."
 navbar:
   title: "Home"
   right:
-    - text: "About"
+    - text: "About me"
       href: about.html
     - text: "Resume"
       href: resume.html
@@ -11,10 +11,12 @@ navbar:
       href: "dashboard.html"
     - icon: fa-envelope fa-lg
       href: mailto:<lj2575@cumc.columbia.edu>
-    - icon: fa-instagram fa-lg
-      href: https://www.instagram.com/jlk0102/
     - icon: fa-github fa-lg
       href: http://github.com/LincoleJ/
+    - icon: fa-instagram fa-lg
+      href: https://www.instagram.com/jlk0102/
+    - icon: fa-linkedin fa-lg
+      href: www.linkedin.com/in/lingke-jiang
 output:
   html_document: 
     theme: united

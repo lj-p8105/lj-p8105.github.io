@@ -6,8 +6,18 @@ output:
     toc_float: true
 ---
 
-Welcome to my website for P8105!
+##### Welcome to my website for P8105!
 
 ![](https://media.giphy.com/media/5dkiNJvWnL1RK/giphy.gif)
 
-In this page, you will find a short introduction of me, a page of my resume, the dashboard that I created for this assignment, and some links to my contacts.
+### Introduction
+In this page, you will find a short introduction of me, a page of my resume, the dashboard that I created for this assignment, and some links to my contacts over the navigation bar. For this project in particular, please follow [this link](https://github.com/lj-p8105/lj-p8105.github.io) for to the repository.
+
+### Resume
+The Resume option over navigation bar directs to my resume which details my academic and professional experiences.
+
+### About
+The About option over navigation bar directs to a page with some information about me.
+
+### Dashboard
+The Dashboard option over navigation bar directs to a page that is my solution for problem 2 of homework 4. More specifically, the scatterplot describes the location and quality of restaurants in Manhattan, with the y-axis being the latitude, the x-axis being the longitude, and the color being the grade of either A, B, or C. Moreover, the bar plot depicts the number of restaurants of each type of cuisine in Washington Heights, and we observe that Latin American restaurants make the top of the list. Lastly, the boxplot depicts the distribution of scores among restaurants in Washington Heights, excluding coffee and desert places as well as the types of cuisine with sample size that's too small (e.g., Japanese and Italian). In particular, observe that seafood restaurants receive the hightest median score among all cuisine types. 

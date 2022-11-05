@@ -1,0 +1,137 @@
+---
+title: "Dashboard of Manhattan Restaurant Inspection in 2022"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source_code: embed
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(httr)
+library(jsonlite)
+library(stringr)
+library(lubridate)
+```
+
+```{r, include = FALSE}
+get_all_inspections = function(url) {
+  
+  all_inspections = vector("list", length = 0)
+  
+  loop_index = 1
+  chunk_size = 50000
+  DO_NEXT = TRUE
+  
+  while (DO_NEXT) {
+    message("Getting data, page ", loop_index)
+    
+    all_inspections[[loop_index]] = 
+      GET(url,
+          query = list(`$order` = "zipcode",
+                       `$limit` = chunk_size,
+                       `$offset` = as.integer((loop_index - 1) * chunk_size)
+                       )
+          ) %>%
+      content("text") %>%
+      fromJSON() %>%
+      as_tibble()
+    
+    DO_NEXT = dim(all_inspections[[loop_index]])[1] == chunk_size
+    loop_index = loop_index + 1
+  }
+  
+  all_inspections
+  
+}
+
+url = "https://data.cityofnewyork.us/resource/43nn-pn8j.json"
+
+nyc_inspections = 
+  get_all_inspections(url) %>%
+  bind_rows() %>%
+  filter(
+    boro == "Manhattan",
+    !is.na(score)) %>%
+  select(camis, boro, zipcode, critical_flag, dba, violation_code, violation_description, score, grade, cuisine_description, inspection_date, latitude, longitude) %>%
+  mutate_at("inspection_date", str_replace, "T00:00:00.000", "") %>%
+  mutate(
+    score = as.numeric(score),
+    zipcode = as.factor(zipcode),
+    grade = as.factor(grade),
+    critical_flag = as.factor(critical_flag),
+    inspection_date = as.Date(inspection_date),
+    cuisine_description = as.factor(cuisine_description),
+    violation_code = as.factor(violation_code)
+  ) %>%
+  filter(inspection_date > ymd(20220101))
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### The Scatterplot
+
+```{r}
+nyc_inspections %>%
+  select(latitude, longitude, grade) %>%
+  filter(
+    !is.na(latitude),
+    !is.na(longitude),
+    !is.na(grade),
+    latitude != 0,
+    longitude != 0,
+    grade == "A" | grade == "B" | grade == "C"
+  ) %>%
+  mutate(text_label = str_c("Grade: ", grade),
+         latitude = round(as.numeric(latitude), digits = 5),
+         longitude = round(as.numeric(longitude), digits = 5)) %>% 
+  plot_ly(
+    x = ~latitude, 
+    y = ~longitude, 
+    type = "scatter", 
+    mode = "markers",
+    color = ~grade, 
+    text = ~text_label, 
+    colors = "viridis",
+    alpha = 0.1)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### The Barplot
+
+```{r}
+nyc_inspections %>% 
+  filter(zipcode == "10032" | zipcode == "10033" | zipcode == "10040") %>%
+  count(cuisine_description) %>% 
+  mutate(cuisine_description = fct_reorder(cuisine_description, n)) %>% 
+  plot_ly(x = ~cuisine_description, y = ~n, color = ~cuisine_description, type = "bar", colors = "viridis")
+```
+
+### The Boxplot
+
+```{r}
+nyc_inspections %>% 
+  filter(
+    zipcode == "10032" | zipcode == "10033" | zipcode == "10040",
+    cuisine_description != "Bakery Products/Desserts" & 
+      cuisine_description != "Donuts" &
+      cuisine_description != "Frozen Desserts" &
+      cuisine_description != "Juice, Smoothies, Fruit Salads" &
+      cuisine_description != "Coffee/Tea" &
+      cuisine_description != "Pancakes/Waffles" &
+      cuisine_description != "Japanese" &
+      cuisine_description != "Irish" &
+      cuisine_description != "Indian" &
+      cuisine_description != "Italian"
+  ) %>%
+  mutate(cuisine_description = fct_reorder(cuisine_description, score)) %>% 
+  plot_ly(y = ~score, color = ~cuisine_description, type = "box")
+```
+
